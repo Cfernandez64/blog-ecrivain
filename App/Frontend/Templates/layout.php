@@ -22,10 +22,10 @@
       <nav class="container">
         <ul class="nav justify-content-center">
           <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="/auteur/">A propos de l'auteur</a></li>
           <?php if ($user->isAuthenticated()) { ?>
           <li class="nav-item"><a class="nav-link" href="/admin/">Admin</a></li>
           <li class="nav-item"><a class="nav-link" href="/admin/news-insert.html">Ajouter une news</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin/posts-insert.html">Ajouter une page</a></li>
           <?php } ?>
         </ul>
       </nav>
