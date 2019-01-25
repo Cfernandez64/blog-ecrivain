@@ -30,7 +30,7 @@ class NewsFormBuilder extends FormBuilder
         ],
        ]))
        ->add(new StringField([
-        'label' => 'Localisation',
+        'label' => 'City',
         'name' => 'city',
         'maxLength' => 100,
         'validators' => [

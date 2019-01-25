@@ -7,6 +7,7 @@ class News extends Entity
 {
   protected $auteur,
             $titre,
+            $city,
             $contenu,
             $dateAjout,
             $dateModif;
@@ -14,10 +15,11 @@ class News extends Entity
   const AUTEUR_INVALIDE = 1;
   const TITRE_INVALIDE = 2;
   const CONTENU_INVALIDE = 3;
+  const CITY_INVALIDE = 4;
 
   public function isValid()
   {
-    return !(empty($this->auteur) || empty($this->titre) || empty($this->contenu));
+    return !(empty($this->auteur) || empty($this->titre) || empty($this->contenu) || empty($this->city));
   }
 
 
@@ -43,14 +45,14 @@ class News extends Entity
     $this->titre = $titre;
   }
 
-  public function setCity($titre)
+  public function setCity($city)
   {
-    if (!is_string($titre) || empty($titre))
+    if (!is_string($city) || empty($city))
     {
-      $this->erreurs[] = self::TITRE_INVALIDE;
+      $this->erreurs[] = self::CITY_INVALIDE;
     }
 
-    $this->titre = $titre;
+    $this->city = $city;
   }
 
   public function setContenu($contenu)
@@ -83,6 +85,11 @@ class News extends Entity
   public function titre()
   {
     return $this->titre;
+  }
+
+  public function city()
+  {
+    return $this->city;
   }
 
   public function contenu()
