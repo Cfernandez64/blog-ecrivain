@@ -6,6 +6,14 @@
     </title>
 
     <meta charset="utf-8" />
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
+    <script>
+    tinymce.init({
+      selector: '#myContent',
+      content_css: 'css/content.css',
+      toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+    });
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
@@ -15,7 +23,7 @@
     <div id="wrap">
       <header class="text-center container-fluid p-0">
         <img class="w-100" src="/images/alaskaRoad.jpg">
-        <h1 id="site-title" class="position-absolute text-center"><a href="/">Voyage en Alaska</a></h1>
+        <h1 id="site-title" class="position-absolute text-center"><a href="/">Billet simple pour l'Alaska</a></h1>
         <p id="sub-title" class="text-white position-absolute">Carnet d'aventures</p>
       </header>
 

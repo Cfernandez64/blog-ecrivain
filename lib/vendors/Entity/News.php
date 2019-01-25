@@ -43,6 +43,16 @@ class News extends Entity
     $this->titre = $titre;
   }
 
+  public function setCity($titre)
+  {
+    if (!is_string($titre) || empty($titre))
+    {
+      $this->erreurs[] = self::TITRE_INVALIDE;
+    }
+
+    $this->titre = $titre;
+  }
+
   public function setContenu($contenu)
   {
     if (!is_string($contenu) || empty($contenu))

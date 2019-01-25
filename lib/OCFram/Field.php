@@ -8,6 +8,7 @@ abstract class Field
   protected $errorMessage;
   protected $label;
   protected $name;
+  protected $id;
   protected $validators = [];
   protected $value;
 
@@ -50,6 +51,11 @@ abstract class Field
     return $this->name;
   }
 
+  public function id()
+  {
+    return $this->id;
+  }
+
   public function validators()
   {
     return $this->validators;
@@ -83,6 +89,14 @@ abstract class Field
     if (is_string($name))
     {
       $this->name = $name;
+    }
+  }
+
+  public function setId($id)
+  {
+    if (is_string($id))
+    {
+      $this->id = $id;
     }
   }
 

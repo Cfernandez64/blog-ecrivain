@@ -29,11 +29,21 @@ class NewsFormBuilder extends FormBuilder
           new NotNullValidator('Merci de spécifier le titre de la news'),
         ],
        ]))
+       ->add(new StringField([
+        'label' => 'Localisation',
+        'name' => 'city',
+        'maxLength' => 100,
+        'validators' => [
+          new MaxLengthValidator('La ville spécifiée est trop longue (100 caractères maximum)', 100),
+          new NotNullValidator('Merci de spécifier la ville de la news'),
+        ],
+       ]))
        ->add(new TextField([
         'label' => 'Contenu',
         'name' => 'contenu',
+        'id'    => 'myContent',
         'rows' => 8,
-        'cols' => 60,
+        'cols' => 100,
         'validators' => [
           new NotNullValidator('Merci de spécifier le contenu de la news'),
         ],
