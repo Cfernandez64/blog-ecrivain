@@ -10,17 +10,19 @@
     <script>
     tinymce.init({
       selector: '#myContent',
-      content_css: 'css/content.css',
       toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
     });
     </script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
   </head>
 
   <body class="bg-light">
-    <div id="wrap">
       <header class="text-center container-fluid p-0">
         <img class="w-100" src="/images/alaskaRoad.jpg">
         <h1 id="site-title" class="position-absolute text-center"><a href="/">Billet simple pour l'Alaska</a></h1>
@@ -38,21 +40,14 @@
         </ul>
       </nav>
 
-      <div id="content-wrap" class="container bg-white shadow-sm p-3">
-        <section id="main">
-          <?php if ($user->hasFlash()) echo '<p style="text-align: center;">', $user->getFlash(), '</p>'; ?>
+      <div id="" class="container">
+        
+              <?= $content ?>
 
-          <?= $content ?>
-        </section>
       </div>
 
       <footer></footer>
-    </div>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
-    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-    crossorigin=""></script>
+    <script src="/js/main.js"></script>
+
   </body>
 </html>

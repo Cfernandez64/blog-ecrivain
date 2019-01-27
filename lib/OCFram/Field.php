@@ -56,6 +56,11 @@ abstract class Field
     return $this->id;
   }
 
+  public function type()
+  {
+    return $this->type;
+  }
+
   public function validators()
   {
     return $this->validators;
@@ -97,6 +102,14 @@ abstract class Field
     if (is_string($id))
     {
       $this->id = $id;
+    }
+  }
+
+  public function setType($type)
+  {
+    if (is_string($type))
+    {
+      $this->type = $type;
     }
   }
 

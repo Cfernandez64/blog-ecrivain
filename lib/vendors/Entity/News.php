@@ -19,7 +19,7 @@ class News extends Entity
 
   public function isValid()
   {
-    return !(empty($this->auteur) || empty($this->titre) || empty($this->contenu) || empty($this->city));
+    return !(empty($this->auteur) || empty($this->titre) || empty($this->contenu));
   }
 
 
