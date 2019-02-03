@@ -11,7 +11,7 @@ abstract class Field
   protected $id;
   protected $validators = [];
   protected $value;
-  protected $imageName;
+  protected $image;
 
   public function __construct(array $options = [])
   {

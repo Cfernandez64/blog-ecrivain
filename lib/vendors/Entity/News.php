@@ -7,7 +7,6 @@ class News extends Entity
 {
   protected $auteur,
             $titre,
-            $city,
             $contenu,
             $dateAjout,
             $dateModif,
@@ -54,6 +53,16 @@ class News extends Entity
     }
 
     $this->contenu = $contenu;
+  }
+
+  public function setFilename($image)
+  {
+    if(empty($image))
+    {
+      $this->erreur[] = self::IMAGE_INVALIDE;
+    }
+
+    $this->image = $image;
   }
 
   public function setDateAjout(\DateTime $dateAjout)

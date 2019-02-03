@@ -5,7 +5,8 @@
   <h2 class="text-center"><?= $news['titre'] ?></h2>
   <hr>
   <p class="text-muted text-center">Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
-  <img class="w-100" src="http://projetblog/images/<?= $news['image'] ?>"/>
+  <img src="http://projetblog/images/<?php echo ($news['image']);?>"/>
+
   <p><?= nl2br($news['contenu']) ?></p>
 
   <?php if ($news['dateAjout'] != $news['dateModif']) { ?>

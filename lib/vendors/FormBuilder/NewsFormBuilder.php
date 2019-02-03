@@ -6,6 +6,7 @@ use \OCFram\StringField;
 use \OCFram\ImageField;
 use \OCFram\TextField;
 use \OCFram\MaxLengthValidator;
+use \OCFram\UploadValidator;
 use \OCFram\NotNullValidator;
 
 class NewsFormBuilder extends FormBuilder
@@ -37,8 +38,7 @@ class NewsFormBuilder extends FormBuilder
         'name' => 'image',
         'type'  => 'file',
         /*'validators' => [
-          new MaxLengthValidator('Le titre spécifié est trop long (100 caractères maximum)', 100),
-          new NotNullValidator('Merci de spécifier le titre de la news'),
+          new UploadValidator(1000),
         ],*/
        ]))
        ->add(new TextField([

@@ -3,6 +3,7 @@ namespace Model;
 
 use \OCFram\Manager;
 use \Entity\News;
+use \OCFram\ImageUpload;
 
 abstract class NewsManager extends Manager
 {
@@ -24,6 +25,8 @@ abstract class NewsManager extends Manager
   {
     if ($news->isValid())
     {
+      $upload = new ImageUpload();
+      $upload->upload();
       $news->isNew() ? $this->add($news) : $this->modify($news);
     }
     else
