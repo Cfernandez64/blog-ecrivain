@@ -7,15 +7,15 @@ class News extends Entity
 {
   protected $auteur,
             $titre,
-            $city,
             $contenu,
             $dateAjout,
-            $dateModif;
+            $dateModif,
+            $image;
 
   const AUTEUR_INVALIDE = 1;
   const TITRE_INVALIDE = 2;
   const CONTENU_INVALIDE = 3;
-  const CITY_INVALIDE = 4;
+  const IMAGE_INVALIDE = 4;
 
   public function isValid()
   {
@@ -45,16 +45,6 @@ class News extends Entity
     $this->titre = $titre;
   }
 
-  public function setCity($city)
-  {
-    if (!is_string($city) || empty($city))
-    {
-      $this->erreurs[] = self::CITY_INVALIDE;
-    }
-
-    $this->city = $city;
-  }
-
   public function setContenu($contenu)
   {
     if (!is_string($contenu) || empty($contenu))
@@ -63,6 +53,16 @@ class News extends Entity
     }
 
     $this->contenu = $contenu;
+  }
+
+  public function setFilename($image)
+  {
+    if(empty($image))
+    {
+      $this->erreur[] = self::IMAGE_INVALIDE;
+    }
+
+    $this->image = $image;
   }
 
   public function setDateAjout(\DateTime $dateAjout)
@@ -87,11 +87,6 @@ class News extends Entity
     return $this->titre;
   }
 
-  public function city()
-  {
-    return $this->city;
-  }
-
   public function contenu()
   {
     return $this->contenu;
@@ -105,5 +100,10 @@ class News extends Entity
   public function dateModif()
   {
     return $this->dateModif;
+  }
+
+  public function image()
+  {
+    return $this->image;
   }
 }

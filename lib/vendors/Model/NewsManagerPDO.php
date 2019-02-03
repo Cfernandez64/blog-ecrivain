@@ -7,11 +7,12 @@ class NewsManagerPDO extends NewsManager
 {
   protected function add(News $news)
   {
-    $requete = $this->dao->prepare('INSERT INTO news SET auteur = :auteur, titre = :titre, contenu = :contenu, dateAjout = NOW(), dateModif = NOW()');
+    $requete = $this->dao->prepare('INSERT INTO news SET auteur = :auteur, titre = :titre, contenu = :contenu, image = :image, dateAjout = NOW(), dateModif = NOW()');
 
     $requete->bindValue(':titre', $news->titre());
     $requete->bindValue(':auteur', $news->auteur());
     $requete->bindValue(':contenu', $news->contenu());
+    $requete->bindValue(':image', $news->image());
 
     $requete->execute();
   }
@@ -28,7 +29,7 @@ class NewsManagerPDO extends NewsManager
 
   public function getList($debut = -1, $limite = -1)
   {
-    $sql = 'SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news ORDER BY id DESC';
+    $sql = 'SELECT id, auteur, titre, contenu, dateAjout, image, dateModif FROM news ORDER BY id DESC';
 
     if ($debut != -1 || $limite != -1)
     {
@@ -53,7 +54,7 @@ class NewsManagerPDO extends NewsManager
 
   public function getUnique($id)
   {
-    $requete = $this->dao->prepare('SELECT id, auteur, titre, contenu, dateAjout, dateModif FROM news WHERE id = :id');
+    $requete = $this->dao->prepare('SELECT id, auteur, titre, contenu, dateAjout, dateModif, image FROM news WHERE id = :id');
     $requete->bindValue(':id', (int) $id, \PDO::PARAM_INT);
     $requete->execute();
 
