@@ -9,10 +9,10 @@ foreach ($listeNews as $news)
   <div class="card bg-white shadow-sm p-3">
     <img src=""/>
     <div class="card-body">
-      <h2 class="card-title"><a href="news-<?= $news['id'] ?>.html"><?= $news['titre'] ?></a></h2>
+      <h2 class="card-title"><a href="news-<?= $news['id'] ?>"><?= $news['titre'] ?></a></h2>
       <p class="text-muted">Chapitre <?= $news['chapitre'] ?></p>
       <p class="card-text"><?= $news['contenu'] ?></p>
-      <a href="news-<?= $news['id'] ?>.html" class="btn btn-primary">Lire la suite</a>
+      <a href="news-<?= $news['id'] ?>" class="btn btn-primary">Lire la suite</a>
     </div>
   </div>
 </div>

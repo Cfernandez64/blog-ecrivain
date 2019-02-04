@@ -37,7 +37,6 @@ class NewsController extends BackController
     $this->page->addVar('title', 'Gestion des news');
 
     $manager = $this->managers->getManagerOf('News');
-
     $this->page->addVar('listeNews', $manager->getList());
     $this->page->addVar('nombreNews', $manager->count());
   }
@@ -45,14 +44,12 @@ class NewsController extends BackController
   public function executeInsert(HTTPRequest $request)
   {
     $this->processForm($request);
-
     $this->page->addVar('title', 'Ajout d\'une news');
   }
 
   public function executeUpdate(HTTPRequest $request)
   {
     $this->processForm($request);
-
     $this->page->addVar('title', 'Modification d\'une news');
   }
 

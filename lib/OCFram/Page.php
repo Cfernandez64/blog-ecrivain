@@ -5,6 +5,7 @@ class Page extends ApplicationComponent
 {
   protected $contentFile;
   protected $vars = [];
+  protected $module;
 
   public function addVar($var, $value)
   {
@@ -12,7 +13,6 @@ class Page extends ApplicationComponent
     {
       throw new \InvalidArgumentException('Le nom de la variable doit être une chaine de caractères non nulle');
     }
-
     $this->vars[$var] = $value;
   }
 
@@ -32,7 +32,15 @@ class Page extends ApplicationComponent
     $content = ob_get_clean();
 
     ob_start();
+    $appName = $this->app->name();
+    if($appName == 'Frontend'){
+      require __DIR__.'/../../App/'.$this->app->name().'/Templates/layout-'.$this->module.'.php';
+    } else {
       require __DIR__.'/../../App/'.$this->app->name().'/Templates/layout.php';
+    }
+
+
+
     return ob_get_clean();
   }
 
@@ -44,5 +52,10 @@ class Page extends ApplicationComponent
     }
 
     $this->contentFile = $contentFile;
+  }
+
+  public function setModule($module)
+  {
+    $this->module = $module;
   }
 }

@@ -26,6 +26,18 @@ class NewsFormBuilder extends FormBuilder
         ],
        ]))
 
+       ->add(new StringField([
+        'label' => 'Chapitre',
+        'name' => 'chapitre',
+        'maxLength' => 100,
+        'placeholder'  => 'Entrez un chapitre',
+        'type'  => 'string',
+        'validators' => [
+          new MaxLengthValidator('Le titre spécifié est trop long (100 caractères maximum)', 100),
+          new NotNullValidator('Merci de spécifier le titre de la news'),
+        ],
+       ]))
+
        ->add(new ImageField([
         'label' => 'Image à la une',
         'name' => 'image',

@@ -20,8 +20,7 @@
 
 
 
-<p><a href="commenter-<?= $news['id'] ?>.html">Ajouter un commentaire</a></p>
-
+<p><a href="commenter-<?= $news['id'] ?>">Ajouter un commentaire</a></p>
 <?php
 if (empty($comments))
 {
