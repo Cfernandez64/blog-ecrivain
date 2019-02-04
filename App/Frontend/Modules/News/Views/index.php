@@ -10,6 +10,7 @@ foreach ($listeNews as $news)
     <img src=""/>
     <div class="card-body">
       <h2 class="card-title"><a href="news-<?= $news['id'] ?>.html"><?= $news['titre'] ?></a></h2>
+      <p class="text-muted">Chapitre <?= $news['chapitre'] ?></p>
       <p class="card-text"><?= $news['contenu'] ?></p>
       <a href="news-<?= $news['id'] ?>.html" class="btn btn-primary">Lire la suite</a>
     </div>

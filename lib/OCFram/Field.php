@@ -8,6 +8,7 @@ abstract class Field
   protected $errorMessage;
   protected $label;
   protected $name;
+  protected $placeholder;
   protected $id;
   protected $validators = [];
   protected $value;
@@ -50,6 +51,10 @@ abstract class Field
   public function name()
   {
     return $this->name;
+  }
+  public function placeholder()
+  {
+    return $this->placeholder;
   }
 
   public function id()
@@ -95,6 +100,14 @@ abstract class Field
     if (is_string($name))
     {
       $this->name = $name;
+    }
+  }
+
+  public function setPlaceholder($placeholder)
+  {
+    if (is_string($placeholder))
+    {
+      $this->placeholder = $placeholder;
     }
   }
 

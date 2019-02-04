@@ -4,7 +4,8 @@
 
   <h2 class="text-center"><?= $news['titre'] ?></h2>
   <hr>
-  <p class="text-muted text-center">Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
+  <p class="text-muted text-center">Chapitre <em><?= $news['chapitre'] ?></em></p>
+  <p class="text-muted text-center">Le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
   <img src="http://projetblog/images/<?php echo ($news['image']);?>"/>
 
   <p><?= nl2br($news['contenu']) ?></p>
@@ -33,7 +34,7 @@ foreach ($comments as $comment)
 {
 ?>
 
-    <p><strong><?= htmlspecialchars($comment['auteur']) ?></strong><br/>
+    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong><br/>
     <span class="text-muted"> le <?= $comment['date']->format('d/m/Y à H\hi') ?></span></p>
     <?php if ($user->isAuthenticated()) { ?> -
       <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a> |

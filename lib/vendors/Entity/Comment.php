@@ -6,16 +6,16 @@ use \OCFram\Entity;
 class Comment extends Entity
 {
   protected $news,
-            $auteur,
+            $pseudo,
             $contenu,
             $date;
 
-  const AUTEUR_INVALIDE = 1;
+  const PSEUDO_INVALIDE = 1;
   const CONTENU_INVALIDE = 2;
 
   public function isValid()
   {
-    return !(empty($this->auteur) || empty($this->contenu));
+    return !(empty($this->pseudo) || empty($this->contenu));
   }
 
   public function setNews($news)
@@ -23,14 +23,14 @@ class Comment extends Entity
     $this->news = (int) $news;
   }
 
-  public function setAuteur($auteur)
+  public function setPseudo($pseudo)
   {
-    if (!is_string($auteur) || empty($auteur))
+    if (!is_string($pseudo) || empty($pseudo))
     {
-      $this->erreurs[] = self::AUTEUR_INVALIDE;
+      $this->erreurs[] = self::PSEUDO_INVALIDE;
     }
 
-    $this->auteur = $auteur;
+    $this->pseudo = $pseudo;
   }
 
   public function setContenu($contenu)
@@ -53,9 +53,9 @@ class Comment extends Entity
     return $this->news;
   }
 
-  public function auteur()
+  public function pseudo()
   {
-    return $this->auteur;
+    return $this->pseudo;
   }
 
   public function contenu()

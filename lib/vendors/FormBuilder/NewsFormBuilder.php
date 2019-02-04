@@ -13,26 +13,19 @@ class NewsFormBuilder extends FormBuilder
 {
   public function build()
   {
-    $this->form->add(new StringField([
-        'label' => 'Auteur',
-        'name' => 'auteur',
-        'maxLength' => 20,
-        'type'  => 'string',
-        'validators' => [
-          new MaxLengthValidator('L\'auteur spécifié est trop long (20 caractères maximum)', 20),
-          new NotNullValidator('Merci de spécifier l\'auteur de la news'),
-        ],
-       ]))
+    $this->form
        ->add(new StringField([
         'label' => 'Titre',
         'name' => 'titre',
         'maxLength' => 100,
+        'placeholder'  => 'Entrez un titre',
         'type'  => 'string',
         'validators' => [
           new MaxLengthValidator('Le titre spécifié est trop long (100 caractères maximum)', 100),
           new NotNullValidator('Merci de spécifier le titre de la news'),
         ],
        ]))
+
        ->add(new ImageField([
         'label' => 'Image à la une',
         'name' => 'image',

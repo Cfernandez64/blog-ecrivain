@@ -12,13 +12,13 @@ class CommentFormBuilder extends FormBuilder
   public function build()
   {
     $this->form->add(new StringField([
-        'label' => 'Auteur',
-        'name' => 'auteur',
+        'label' => 'Pseudo',
+        'name' => 'pseudo',
         'maxLength' => 50,
         'type'    => 'text',
         'validators' => [
-          new MaxLengthValidator('L\'auteur spécifié est trop long (50 caractères maximum)', 50),
-          new NotNullValidator('Merci de spécifier l\'auteur du commentaire'),
+          new MaxLengthValidator('Le pseudo spécifié est trop long (50 caractères maximum)', 50),
+          new NotNullValidator('Merci de spécifier le pseudo du commentaire'),
         ],
        ]))
        ->add(new TextField([
