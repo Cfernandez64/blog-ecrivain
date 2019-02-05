@@ -6,6 +6,7 @@ class Page extends ApplicationComponent
   protected $contentFile;
   protected $vars = [];
   protected $module;
+  protected $htmlheader;
 
   public function addVar($var, $value)
   {
@@ -34,15 +35,15 @@ class Page extends ApplicationComponent
     ob_start();
     $appName = $this->app->name();
     if($appName == 'Frontend'){
+      require __DIR__.'/../../App/'.$this->app->name().'/Templates/header-'.$this->htmlheader.'.php';
       require __DIR__.'/../../App/'.$this->app->name().'/Templates/layout-'.$this->module.'.php';
     } else {
       require __DIR__.'/../../App/'.$this->app->name().'/Templates/layout.php';
     }
 
-
-
     return ob_get_clean();
   }
+
 
   public function setContentFile($contentFile)
   {
@@ -57,5 +58,10 @@ class Page extends ApplicationComponent
   public function setModule($module)
   {
     $this->module = $module;
+  }
+
+  public function setHtmlheader($htmlheader)
+  {
+    $this->htmlheader = $htmlheader;
   }
 }

@@ -1,4 +1,4 @@
-<h2 class="text-center mt-3 mb-3">Mes derniers billets</h2>
+<h2 class="text-center mt-3 mb-3">Derniers épisodes</h2>
 <div class="row justify-content-around">
 
 <?php

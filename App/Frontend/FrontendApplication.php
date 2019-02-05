@@ -19,5 +19,6 @@ class FrontendApplication extends Application
 
     $this->httpResponse->setPage($controller->page());
     $this->httpResponse->send();
+
   }
 }

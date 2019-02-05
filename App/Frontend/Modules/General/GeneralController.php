@@ -43,6 +43,7 @@ class GeneralController extends BackController
     {
       $this->app->httpResponse()->redirect404();
     }
+    $this->page->setHtmlheader('normal');
     $this->page->setModule('general');
     $this->page->addVar('title', $general->titre());
     $this->page->addVar('general', $general);
