@@ -1,4 +1,4 @@
-      <section id="main">
+      <section id="main mb-5">
 
               <?= $content ?>
 

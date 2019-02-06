@@ -30,6 +30,7 @@
             <ul class="nav flex-column">
               <li><a class="nav-link" title="Accueil" href="/"><div class="row align-items-center"><div class="picto col"><img src="/images/house.png"/></div><div class="item col">&nbsp;Accueil</div></div></a></li>
               <li><a class="nav-link" title="L'auteur" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/manager.png"/></div><div class="item col">&nbsp;L'auteur</div></div></a></li>
+              <li><a class="nav-link" title="Tous les chapitres" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/books.png"/></div><div class="item col">&nbsp;Tous les chapitres</div></div></a></li>
               <?php if ($user->isAuthenticated()) { ?>
               <li><a class="nav-link" href="/admin/">Admin</a></li>
               <li><a class="nav-link" href="/admin/news-insert.html">Ajouter une news</a></li>

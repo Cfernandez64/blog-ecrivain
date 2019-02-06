@@ -1,6 +1,6 @@
 
 <h2 class="mt-5 text-center">Derniers épisodes publiés</h2>
-<p class="text-center"><small>Voir tous les épisodes</small></p>
+<p class="text-center"><small><a href="/livre">Voir tous les épisodes</a></small></p>
 
 <?php
 foreach ($listeNews as $news)

@@ -17,9 +17,67 @@
   </div>
 
   <div class="col-md-8 offset-md-2 mt-1 text-center mb-4">
-    <p class="back"><a class="text-muted  text-decoration-none" href="/"><img src="/images/open-book.png" alt="booking"> <small>Revenir aux articles</small></a></p>
+    <p class="back"><a class="text-muted  text-decoration-none" href="/livre"><img src="/images/open-book.png" alt="booking"> <small>Revenir aux articles</small></a></p>
   </div>
 </div>
+
+
+
+
+<div class="bg-dark mt-3 p-3 container-fluid">
+  <div class="container">
+      <div class="col-md-8 offset-md-2 mt-3 text-white">
+        <!--<form class="" action="commenter-<?= $news['id'] ?>" method="get">
+          <input type="text" id="pseudo" name="pseudo" value="">
+          <textarea id="contenu-com">
+          </textarea>
+        </form>-->
+
+
+        <form action="" method="post">
+          <p>
+            <?= $form ?>
+
+            <input type="submit" value="Commenter" />
+          </p>
+        </form>
+
+
+        <?php
+        if (empty($comments))
+        {
+          ?>
+          <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
+          <?php
+        }
+
+        foreach ($comments as $comment)
+        {
+          ?>
+
+          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
+            <small class="text-muted"> le <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
+            <?php if ($user->isAuthenticated()) { ?> -
+              <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a> |
+              <a href="admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
+            <?php } ?>
+
+            <p class="border-bottom pb-2"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+
+            <?php
+          }
+          ?>
+    </div>
+
+  </div>
+
+  </div>
+
+
+
+
+
+
 
 
 <div class="bg-dark mt-3 p-3 container-fluid">
