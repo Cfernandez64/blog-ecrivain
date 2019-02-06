@@ -1,10 +1,12 @@
-      <div id="" class="container">
+      <section id="main">
 
               <?= $content ?>
 
-      </div>
+      </section>
 
-      <footer></footer>
+      <footer class="text-center text-muted p-2">
+        Jean Forteroche
+      </footer>
     <script src="/js/main.js"></script>
 
   </body>

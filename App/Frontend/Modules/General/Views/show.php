@@ -1,5 +1,5 @@
 
-<div class="bg-white shadow-sm p-3">
+<div class="container mt-5">
 
 
   <h2 class="text-center"><?= $general['titre'] ?></h2>

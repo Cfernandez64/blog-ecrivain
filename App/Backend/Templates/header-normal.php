@@ -25,7 +25,7 @@
   <body class="bg-light">
       <header id="pageHeader" class="text-center container-fluid p-0">
         <h1 id="site-title" class="position-absolute text-center"><a class="text-white text-decoration-none" href="/">Billet simple pour l'Alaska</a></h1>
-        <h2 id="sub-title" class="text-white position-absolute">Carnet d'aventures</h2>
+        <p id="sub-title" class="text-white position-absolute">Carnet d'aventures</p>
         <nav class="position-fixed">
             <ul class="nav flex-column">
               <li><a class="nav-link" title="Accueil" href="/"><div class="row align-items-center"><div class="picto col"><img src="/images/house.png"/></div><div class="item col">&nbsp;Accueil</div></div></a></li>

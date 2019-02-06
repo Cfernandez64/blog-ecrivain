@@ -1,7 +1,42 @@
-
+html{
+  margin:0;
+  padding:0;
+  overflow-x: hidden;
+}
 
 h1{
   font-family: 'Fugaz One', cursive;
+}
+
+@font-face {
+  font-family: Goodlife;
+  src: url(/font/38B303_0_0.ttf);
+}
+h2, h3{
+  font-family: 'Goodlife';
+  font-size: 2rem;
+}
+#homeHeader{
+  background: url('/images/home.jpg');
+  background-size:cover;
+}
+
+#pageHeader{
+  position:relative;
+  height:35vh;
+  width:100%;
+  background: url('/images/grotte.jpg');
+  background-size:cover;
+  background-position: center center;
+}
+
+#filterHome{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: rgba(0,39,107,0.7);
 }
 
 #site-title{
@@ -9,14 +44,102 @@ h1{
   left:10px;
   right:10px;
   font-size:3rem;
+  color:#fff;
 }
 
-#site-title a{
+#site-title-home{
+  top:25%;
+  left:10px;
+  right:10px;
+}
+#site-title-home h1{
+  font-size:5rem;
+}
+.borderTitre{
+  background: #fff;
+  height:3px;
+  width:50%;
+  margin:auto;
+  animation-name: toWidth;
+  animation-duration: 2s;
+}
+@keyframes toWidth{
+  0%{
+    width:0%;
+  }
+  100%{
+    width:50%;
+  }
+}
+
+#site-bottom-home{
+  bottom:5%;
+  left:10px;
+  right:10px;
+}
+
+#site-bottom-home p{
+  text-transform: uppercase;
   color:#fff;
+}
+
+#site-bottom-home p img{
+  max-width:20px;
+}
+
+nav{
+  right:0;
+  top:30%;
+}
+
+nav ul li{
+  background: rgba(0,39,107,0.8);
+  transition: all .3s;
+}
+
+nav ul li:hover{
+    background: rgba(0,39,107,1);
+}
+
+nav ul li a{
+  color:#fff;
+}
+.item{
+  display: none;
+}
+
+nav ul li img{
+  max-width:30px;
+}
+
+#sub-home{
+  top:150px;
+  left:10px;
+  right:10px;
 }
 
 #sub-title{
   top:150px;
   left:10px;
   right:10px;
+}
+
+.back img{
+  max-width:20px;
+}
+
+footer{
+  background: #000612;
+}
+
+
+/*Boot*/
+.bg-dark{
+  background: #0D182B!important;
+}
+.btn-primary{
+  background: #00276B;
+  border:#00276B;
+  margin:auto;
+  text-transform:uppercase;
 }
