@@ -14,7 +14,7 @@ class StringField extends Field
       $widget .= $this->errorMessage.'<br />';
     }
 
-    $widget .= '<label>'.$this->label.'</label><input type="'.$this->type.'" id="'.$this->id.'" name="'.$this->name.'" placeholder="'.$this->placeholder.'"';
+    $widget .= '<label>'.$this->label.'</label><input class="form-control" type="'.$this->type.'" id="'.$this->id.'" name="'.$this->name.'" placeholder="'.$this->placeholder.'"';
 
     if (!empty($this->value))
     {

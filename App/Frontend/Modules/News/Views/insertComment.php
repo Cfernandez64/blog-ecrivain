@@ -3,6 +3,6 @@
   <p>
     <?= $form ?>
 
-    <input type="submit" value="Commenter" />
+    <input type="submit" class="btn btn-outline-light" value="Ajouter un commentaire" />
   </p>
 </form>

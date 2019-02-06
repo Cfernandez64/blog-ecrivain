@@ -27,87 +27,41 @@
 <div class="bg-dark mt-3 p-3 container-fluid">
   <div class="container">
       <div class="col-md-8 offset-md-2 mt-3 text-white">
-        <!--<form class="" action="commenter-<?= $news['id'] ?>" method="get">
-          <input type="text" id="pseudo" name="pseudo" value="">
-          <textarea id="contenu-com">
-          </textarea>
-        </form>-->
-
-
-        <form action="" method="post">
-          <p>
-            <?= $form ?>
-
-            <input type="submit" value="Commenter" />
-          </p>
-        </form>
-
-
         <?php
         if (empty($comments))
         {
           ?>
           <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
           <?php
+        } else
+        {
+          echo("<h3 class='border-bottom pb-3 mb-3'>".count($comments). " commentaires</h3>");
         }
 
         foreach ($comments as $comment)
         {
           ?>
 
-          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
-            <small class="text-muted"> le <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
+          <p class="mb-1"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
+            <small class="text-muted"> - <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
             <?php if ($user->isAuthenticated()) { ?> -
               <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a> |
               <a href="admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
             <?php } ?>
-
-            <p class="border-bottom pb-2"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
-
-            <?php
-          }
-          ?>
-    </div>
-
-  </div>
-
-  </div>
-
-
-
-
-
-
-
-
-<div class="bg-dark mt-3 p-3 container-fluid">
-  <div class="container">
-      <div class="col-md-8 offset-md-2 mt-3 text-white">
-        <p><a href="commenter-<?= $news['id'] ?>">Ajouter un commentaire</a></p>
-        <?php
-        if (empty($comments))
-        {
-          ?>
-          <p>Aucun commentaire n'a encore été posté. Soyez le premier à en laisser un !</p>
-          <?php
-        }
-
-        foreach ($comments as $comment)
-        {
-          ?>
-
-          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
-            <small class="text-muted"> le <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
-            <?php if ($user->isAuthenticated()) { ?> -
-              <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a> |
-              <a href="admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
-            <?php } ?>
-
-            <p class="border-bottom pb-2"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+            <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
 
             <?php
           }
           ?>
+
+          <form action="" class="border-top pt-4" method="post">
+            <h3 class="pb-3">Commenter</h3>
+            <p>
+              <?= $form ?>
+
+              <input type="submit" class="btn btn-outline-light" value="Ajouter un commentaire" />
+            </p>
+          </form>
     </div>
 
   </div>
