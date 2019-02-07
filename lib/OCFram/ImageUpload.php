@@ -4,10 +4,11 @@ namespace OCFram;
 class ImageUpload
 {
   protected $image;
-  public function upload($image)
+  protected $location;
+  public function upload($image, $location)
   {
     $file = basename($image);
-    $name = "images/$file";
+    $name = $location.$file;
     move_uploaded_file($_FILES['image']['tmp_name'],$name);
   }
 }

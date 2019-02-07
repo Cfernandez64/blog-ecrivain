@@ -36,8 +36,9 @@ class GoldenbookController extends BackController
         'contenu' => $request->postData('contenu')
       ]);
       $image = $goldenbook->image();
-      $upload = new ImageUpload($image);
-      $upload->upload($image);
+      $location = "images/users/";
+      $upload = new ImageUpload($image, $location);
+      $upload->upload($image, $location);
     }
     else
     {

@@ -10,7 +10,7 @@
         <div class="col-2">
         <?php if($gold['image'])
           {
-            echo('<p><img class="w-75" src="http://projetblog/images/'.$gold['image'].'"/></p>');
+            echo('<p><img class="w-75" src="http://projetblog/images/users/'.$gold['image'].'"/></p>');
           }
           ?>
         </div>
