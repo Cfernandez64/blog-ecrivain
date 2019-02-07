@@ -2,15 +2,19 @@
 namespace Entity;
 
 use \OCFram\Entity;
+use \OCFram\HTTPRequest;
 
 class Goldenbook extends Entity
 {
   protected $pseudo,
             $contenu,
-            $date;
+            $date,
+            $image;
+
 
   const PSEUDO_INVALIDE = 1;
   const CONTENU_INVALIDE = 2;
+  const IMAGE_INVALIDE = 3;
 
   public function isValid()
   {
@@ -37,6 +41,16 @@ class Goldenbook extends Entity
     $this->contenu = $contenu;
   }
 
+  public function setFilename($image)
+  {
+    if(empty($image))
+    {
+      $this->erreur[] = self::IMAGE_INVALIDE;
+    }
+
+    $this->image = $image;
+  }
+
   public function setDate(\DateTime $date)
   {
     $this->date = $date;
@@ -55,5 +69,10 @@ class Goldenbook extends Entity
   public function date()
   {
     return $this->date;
+  }
+
+  public function image()
+  {
+    return $this->image;
   }
 }

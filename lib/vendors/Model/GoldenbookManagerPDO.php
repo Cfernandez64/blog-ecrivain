@@ -7,13 +7,17 @@ class GoldenbookManagerPDO extends GoldenbookManager
 {
   protected function add(Goldenbook $goldenbook)
   {
-    $q = $this->dao->prepare('INSERT INTO goldenbook SET pseudo = :pseudo, contenu = :contenu, date = NOW()');
+    $requete = $this->dao->prepare('INSERT INTO goldenbook SET pseudo = :pseudo, contenu = :contenu, date = NOW(), image = :image');
 
-    $q->bindValue(':id', $goldenbook->id(), \PDO::PARAM_INT);
-    $q->bindValue(':pseudo', $goldenbook->pseudo());
-    $q->bindValue(':contenu', $goldenbook->contenu());
-
-    $q->execute();
+    $requete->bindValue(':pseudo', $goldenbook->pseudo());
+    $requete->bindValue(':contenu', $goldenbook->contenu());
+    if(!empty($goldenbook->image())){
+      $image = $goldenbook->image();
+    } else {
+      $image = "incognito.png";
+    }
+    $requete->bindValue(':image', $image);
+    $requete->execute();
 
     $goldenbook->setId($this->dao->lastInsertId());
   }
@@ -30,7 +34,7 @@ class GoldenbookManagerPDO extends GoldenbookManager
 
   public function getList()
   {
-    $sql = 'SELECT id, pseudo, contenu, date FROM goldenbook ORDER BY id DESC';
+    $sql = 'SELECT id, pseudo, contenu, image, date FROM goldenbook ORDER BY id DESC';
 
     $requete = $this->dao->query($sql);
     $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\Goldenbook');

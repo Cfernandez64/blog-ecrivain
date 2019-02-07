@@ -3,6 +3,7 @@ namespace App\Backend\Modules\News;
 
 use \OCFram\BackController;
 use \OCFram\HTTPRequest;
+use \OCFram\ImageUpload;
 use \Entity\News;
 use \Entity\Comment;
 use \FormBuilder\CommentFormBuilder;
@@ -97,6 +98,10 @@ class NewsController extends BackController
         'contenu' => $request->postData('contenu'),
         'filename' => $request->fileName('image')
       ]);
+
+      $image = $news->image();
+      $upload = new ImageUpload($image);
+      $upload->upload($image);
 
       if ($request->getExists('id'))
       {

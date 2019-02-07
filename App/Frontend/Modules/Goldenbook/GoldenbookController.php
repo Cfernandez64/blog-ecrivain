@@ -3,8 +3,9 @@ namespace App\Frontend\Modules\Goldenbook;
 
 use \OCFram\BackController;
 use \OCFram\HTTPRequest;
+use \OCFram\ImageUpload;
 use \Entity\Goldenbook;
-use \FormBuilder\GoldenbooFormBuilder;
+use \FormBuilder\GoldenbookFormBuilder;
 use \OCFram\FormHandler;
 
 class GoldenbookController extends BackController
@@ -22,11 +23,41 @@ class GoldenbookController extends BackController
 
     // On ajoute la variable $golds à la vue.
     $this->page->setHtmlheader('normal');
-    $this->page->setModule('general');
+    $this->page->setModule('news');
     $this->page->addVar('golds', $golds);
+
+    // Si le formulaire a été envoyé.
+    if ($request->method() == 'POST')
+    {
+      $goldenbook = new Goldenbook([
+        'gold' => $request->getData('id'),
+        'pseudo' => $request->postData('pseudo'),
+        'filename' => $request->fileName('image'),
+        'contenu' => $request->postData('contenu')
+      ]);
+      $image = $goldenbook->image();
+      $upload = new ImageUpload($image);
+      $upload->upload($image);
+    }
+    else
+    {
+      $goldenbook = new Goldenbook();
+    }
+
+    $formBuilder = new GoldenbookFormBuilder($goldenbook);
+    $formBuilder->build();
+
+    $form = $formBuilder->form();
+
+    $formHandler = new FormHandler($form, $this->managers->getManagerOf('Goldenbook'), $request);
+    if ($formHandler->process())
+    {
+        $this->app->httpResponse()->redirect('livre-or');
+    }
+    $this->page->addVar('form', $form->createView());
   }
 
-  public function executeShow(HTTPRequest $request)
+    /*public function executeShow(HTTPRequest $request)
   {
     $gold = $this->managers->getManagerOf('Goldenbook')->getUnique($request->getData('id'));
 
@@ -34,11 +65,7 @@ class GoldenbookController extends BackController
     {
       $this->app->httpResponse()->redirect404();
     }
-    $this->page->setHtmlheader('normal');
-    $this->page->setModule('gold');
-    $this->page->addVar('title', $gold->titre());
-    $this->page->addVar('gold', $gold);
-    $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getListOf($gold->id()));
+
 
 
     // Si le formulaire a été envoyé.
@@ -67,7 +94,7 @@ class GoldenbookController extends BackController
     }
     $this->page->addVar('form', $form->createView());
 
-  }
+  }*/
 
   public function executeInsertComment(HTTPRequest $request)
   {

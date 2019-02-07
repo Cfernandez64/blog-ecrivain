@@ -4,6 +4,8 @@ namespace FormBuilder;
 use \OCFram\FormBuilder;
 use \OCFram\StringField;
 use \OCFram\TextField;
+use \OCFram\ImageField;
+use \OCFram\UploadValidator;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
 
@@ -20,6 +22,14 @@ class GoldenbookFormBuilder extends FormBuilder
           new MaxLengthValidator('Le pseudo spécifié est trop long (50 caractères maximum)', 50),
           new NotNullValidator('Merci de spécifier le pseudo du commentaire'),
         ],
+       ]))
+       ->add(new ImageField([
+        'label' => 'Votre photo (facultatif)',
+        'name' => 'image',
+        'type'  => 'file',
+        /*'validators' => [
+          new UploadValidator(1000),
+        ],*/
        ]))
        ->add(new TextField([
         'label' => 'Message',

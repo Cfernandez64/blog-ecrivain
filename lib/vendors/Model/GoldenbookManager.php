@@ -3,6 +3,7 @@ namespace Model;
 
 use \OCFram\Manager;
 use \Entity\Goldenbook;
+use \OCFram\ImageUpload;
 
 abstract class GoldenbookManager extends Manager
 {
@@ -36,11 +37,12 @@ abstract class GoldenbookManager extends Manager
   {
     if ($goldenbook->isValid())
     {
+
       $goldenbook->isNew() ? $this->add($goldenbook) : $this->modify($goldenbook);
     }
     else
     {
-      throw new \RuntimeException('Le goldenbookaire doit être validé pour être enregistré');
+      throw new \RuntimeException('Le message doit être validé pour être enregistré');
     }
   }
 
