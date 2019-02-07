@@ -26,6 +26,16 @@ class FormHandler
     return false;
   }
 
+  public function connect($log)
+  {
+    if($this->request->method() == 'POST' && $this->form->isValid())
+    {
+      return true;
+    }
+
+    return false;
+  }
+
   public function setForm(Form $form)
   {
     $this->form = $form;

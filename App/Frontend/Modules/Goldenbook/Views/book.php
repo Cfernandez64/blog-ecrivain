@@ -31,7 +31,7 @@
   <div class="container">
     <div class="col-md-8 offset-md-2 mt-3 text-white">
       <form action="" method="post"  enctype="multipart/form-data">
-      <h3 class="pb-3">Ajouter un message</h3>
+      <h3 class="pb-3 border-bottom">Ajouter un message</h3>
       <p>
       <?= $form ?>
 

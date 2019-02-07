@@ -6,13 +6,13 @@
           </title>
 
           <meta charset="utf-8" />
-          <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
+          <!--<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
           <script>
           tinymce.init({
             selector: '#myContent',
             toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
           });
-          </script>
+        </script>-->
           <script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -33,9 +33,9 @@
                     <?php if ($user->isAuthenticated()) { ?>
                       <li class="nav-item"><a class="nav-link" href="/admin/">Admin</a></li>
                       <li class="nav-item"><a class="nav-link" href="/admin/general">Liste des pages</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/general-insert.html">Ajouter une page</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/news-insert.html">Ajouter une news</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/deconnexion.html">Se déconnecter</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/general-insert">Ajouter une page</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/news-insert">Ajouter une news</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/deconnexion">Se déconnecter</a></li>
                     <?php } ?>
                   </ul>
                 </nav>

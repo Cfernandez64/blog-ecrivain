@@ -28,8 +28,8 @@
               <li><a class="nav-link" title="Livre d'or" href="/livre-or"><div class="row align-items-center"><div class="picto col"><img src="/images/agenda.png"/></div><div class="item col">&nbsp;Livre d'or</div></div></a></li>
               <?php if ($user->isAuthenticated()) { ?>
               <li><a class="nav-link" href="/admin/">Admin</a></li>
-              <li><a class="nav-link" href="/admin/news-insert.html">Ajouter une news</a></li>
-              <li><a class="nav-link" href="/admin/deconnexion.html">Se déconnecter</a></li>
+              <li><a class="nav-link" href="/admin/news-insert">Ajouter une news</a></li>
+              <li><a class="nav-link" href="/admin/deconnexion">Se déconnecter</a></li>
               <?php } ?>
             </ul>
           </nav>
