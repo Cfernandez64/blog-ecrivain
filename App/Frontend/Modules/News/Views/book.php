@@ -15,20 +15,20 @@
   foreach ($listeNews as $news)
   {
   ?>
-  <div class="col-md-4 newsSingle <?php echo('chapter-'.$news['chapitre'].'');?>">
+  <div class="col-md-4 newsSingle <?php echo('chapter-'.htmlspecialchars($news['chapitre']).'');?>">
     <div class="p-3">
       <div class="text-center">
-        <h2 class="text-center"><a class="text-decoration-none" href="news-<?= $news['id'] ?>"><?= $news['titre'] ?></a></h2>
-        <p class="text-muted text-center">Chapitre <?= $news['chapitre'] ?></p>
+        <h2 class="text-center"><a class="text-decoration-none" href="news-<?= $news['id'] ?>"><?= htmlspecialchars($news['titre']) ?></a></h2>
+        <p class="text-muted text-center">Chapitre <?= htmlspecialchars($news['chapitre']) ?></p>
 
         <p class="text-muted text-center">Publié le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
         <?php
         if($news['image'])
         {
-          echo('<p><img class="w-100" src="http://projetblog/images/'.$news['image'].'"/></p>');
+          echo('<p><img class="w-100" src="http://projetblog/images/'.htmlspecialchars($news['image']).'"/></p>');
         }
         ?>
-        <p><?php echo ($news['contenu']); ?></p>
+        <p><?= htmlspecialchars($news['contenu']); ?></p>
         <a href="news-<?= $news['id'] ?>" class="btn btn-primary">Lire la suite</a>
       </div>
     </div>

@@ -3,12 +3,12 @@
   <div class="col-md-8 offset-md-2 mt-5">
 
 
-    <h2 class="text-center"><?= $news['titre'] ?></h2>
+    <h2 class="text-center"><?= htmlspecialchars($news['titre']) ?></h2>
     <hr>
-    <p class="text-muted text-center">Chapitre <em><?= $news['chapitre'] ?></em></p>
-    <p><img class="w-100" src="http://projetblog/images/<?php echo ($news['image']);?>"/></p>
+    <p class="text-muted text-center">Chapitre <em><?= htmlspecialchars($news['chapitre']) ?></em></p>
+    <p><img class="w-100" src="http://projetblog/images/<?php echo (htmlspecialchars($news['image']));?>"/></p>
 
-    <p><?= nl2br($news['contenu']) ?></p>
+    <p><?= nl2br(htmlspecialchars($news['contenu'])) ?></p>
 
     <?php if ($news['dateAjout'] != $news['dateModif']) { ?>
       <p style="text-align: right;"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
@@ -53,8 +53,8 @@
           <p class="mb-1"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
             <small class="text-muted"> - <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
             <?php if ($user->isAuthenticated()) { ?> -
-              <a href="admin/comment-update-<?= $comment['id'] ?>.html">Modifier</a> |
-              <a href="admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
+              <a href="admin/comment-update-<?= $comment['id'] ?>">Modifier</a> |
+              <a href="admin/comment-delete-<?= $comment['id'] ?>">Supprimer</a>
             <?php } ?>
             <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
 
