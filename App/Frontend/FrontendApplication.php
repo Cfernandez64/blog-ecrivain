@@ -2,6 +2,7 @@
 namespace App\Frontend;
 
 use \OCFram\Application;
+use \OCFram\Page;
 
 class FrontendApplication extends Application
 {

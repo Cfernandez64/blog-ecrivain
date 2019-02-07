@@ -6,13 +6,13 @@
           </title>
 
           <meta charset="utf-8" />
-          <!--<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
+          <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
           <script>
           tinymce.init({
             selector: '#myContent',
             toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
           });
-        </script>-->
+        </script>
           <script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -31,11 +31,11 @@
                     <li><a class="nav-link" title="Accueil" href="/"><div class="row align-items-center"><div class="picto col"><img src="/images/house.png"/></div><div class="item col">&nbsp;Accueil</div></div></a></li>
                     <li><a class="nav-link" title="L'auteur" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/manager.png"/></div><div class="item col">&nbsp;L'auteur</div></div></a></li>
                     <?php if ($user->isAuthenticated()) { ?>
-                      <li class="nav-item"><a class="nav-link" href="/admin/">Admin</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/general">Liste des pages</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/general-insert">Ajouter une page</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/news-insert">Ajouter une news</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/deconnexion">Se déconnecter</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/">Admin</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/general">Liste des pages</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/general-insert">Ajouter une page</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/news-insert">Ajouter une news</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/deconnexion">Se déconnecter</a></li>
                     <?php } ?>
                   </ul>
                 </nav>

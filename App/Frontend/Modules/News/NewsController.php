@@ -34,8 +34,7 @@ class NewsController extends BackController
     }
 
     // On ajoute la variable $listeNews à la vue.
-    $this->page->setHtmlheader('home');
-    $this->page->setModule('general');
+
     $this->page->addVar('listeNews', $listeNews);
   }
 
@@ -65,8 +64,6 @@ class NewsController extends BackController
     }
 
     // On ajoute la variable $listeNews à la vue.
-    $this->page->setHtmlheader('normal');
-    $this->page->setModule('general');
     $this->page->addVar('listeNews', $listeNews);
   }
 
@@ -78,8 +75,7 @@ class NewsController extends BackController
     {
       $this->app->httpResponse()->redirect404();
     }
-    $this->page->setHtmlheader('normal');
-    $this->page->setModule('news');
+
     $this->page->addVar('title', $news->titre());
     $this->page->addVar('news', $news);
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getListOf($news->id()));
@@ -142,8 +138,7 @@ class NewsController extends BackController
 
       $this->app->httpResponse()->redirect('news-'.$request->getData('news'));
     }
-    $this->page->setHtmlheader('normal');
-    $this->page->setModule('news');
+
     $this->page->addVar('comment', $comment);
     $this->page->addVar('form', $form->createView());
     $this->page->addVar('title', 'Ajout d\'un commentaire');

@@ -50,10 +50,10 @@ class ConnexionController extends BackController
             $login = $request->postData('login');
             $password = $request->postData('password');
 
-            if ($login == $data['login'] && $password == $data['password'])
+            if ($login == $data['login'] && password_verify($password, $data['password']))
             {
               $this->app->user()->setAuthenticated(true);
-              $this->app->httpResponse()->redirect('dashboard/');
+              $this->app->httpResponse()->redirect('/admin/dashboard');
             }
             else
             {

@@ -8,7 +8,7 @@
     <p class="text-muted text-center">Chapitre <em><?= htmlspecialchars($news['chapitre']) ?></em></p>
     <p><img class="w-100" src="http://projetblog/images/<?php echo (htmlspecialchars($news['image']));?>"/></p>
 
-    <p><?= nl2br(htmlspecialchars($news['contenu'])) ?></p>
+    <p><?= nl2br($news['contenu']) ?></p>
 
     <?php if ($news['dateAjout'] != $news['dateModif']) { ?>
       <p style="text-align: right;"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
@@ -53,8 +53,8 @@
           <p class="mb-1"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
             <small class="text-muted"> - <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
             <?php if ($user->isAuthenticated()) { ?> -
-              <a href="admin/comment-update-<?= $comment['id'] ?>">Modifier</a> |
-              <a href="admin/comment-delete-<?= $comment['id'] ?>">Supprimer</a>
+              <a href="admin/dashboard/comment-update-<?= $comment['id'] ?>">Modifier</a> |
+              <a href="admin/dashboard/comment-delete-<?= $comment['id'] ?>">Supprimer</a>
             <?php } ?>
             <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
 

@@ -1,3 +1,4 @@
+<div class="container">
 
 <h2 class="mt-5 text-center">Filtrer par chapitre</h2>
 <div class="text-center w-25 mx-auto mt-3 mb-4">
@@ -28,11 +29,12 @@
           echo('<p><img class="w-100" src="http://projetblog/images/'.htmlspecialchars($news['image']).'"/></p>');
         }
         ?>
-        <p><?= htmlspecialchars($news['contenu']); ?></p>
+        <p><?= $news['contenu']; ?></p>
         <a href="news-<?= $news['id'] ?>" class="btn btn-primary">Lire la suite</a>
       </div>
     </div>
   </div>
   <?php
   }?>
+</div>
 </div>

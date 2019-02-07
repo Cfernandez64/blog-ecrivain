@@ -22,8 +22,6 @@ class GoldenbookController extends BackController
     $golds = $manager->getList();
 
     // On ajoute la variable $golds à la vue.
-    $this->page->setHtmlheader('normal');
-    $this->page->setModule('news');
     $this->page->addVar('golds', $golds);
 
     // Si le formulaire a été envoyé.
