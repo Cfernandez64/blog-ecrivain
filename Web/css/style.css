@@ -132,6 +132,10 @@ footer{
   background: #000612;
 }
 
+.pseudoImg{
+  max-width:30px;
+}
+
 
 /*Boot*/
 .bg-dark{

@@ -35,7 +35,15 @@
           <?php
         } else
         {
-          echo("<h3 class='border-bottom pb-3 mb-3'>".count($comments). " commentaires</h3>");
+          $nbComments = count($comments);
+          if ($nbComments > 1)
+          {
+            echo("<h3 class='border-bottom pb-3 mb-3'>".count($comments). " commentaires</h3>");
+          } else
+          {
+            echo("<h3 class='border-bottom pb-3 mb-3'>".count($comments). " commentaire</h3>");
+          }
+
         }
 
         foreach ($comments as $comment)

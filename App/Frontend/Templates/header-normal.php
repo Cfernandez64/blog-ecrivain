@@ -6,13 +6,7 @@
     </title>
 
     <meta charset="utf-8" />
-    <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
-    <script>
-    tinymce.init({
-      selector: '#myContent',
-      toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
-    });
-    </script>
+
     <script
     src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -30,7 +24,7 @@
             <ul class="nav flex-column">
               <li><a class="nav-link" title="Accueil" href="/"><div class="row align-items-center"><div class="picto col"><img src="/images/house.png"/></div><div class="item col">&nbsp;Accueil</div></div></a></li>
               <li><a class="nav-link" title="L'auteur" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/manager.png"/></div><div class="item col">&nbsp;L'auteur</div></div></a></li>
-              <li><a class="nav-link" title="Tous les chapitres" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/books.png"/></div><div class="item col">&nbsp;Tous les chapitres</div></div></a></li>
+              <li><a class="nav-link" title="Tous les chapitres" href="/livre"><div class="row align-items-center"><div class="picto col"><img src="/images/books.png"/></div><div class="item col">&nbsp;Tous les chapitres</div></div></a></li>
               <?php if ($user->isAuthenticated()) { ?>
               <li><a class="nav-link" href="/admin/">Admin</a></li>
               <li><a class="nav-link" href="/admin/news-insert.html">Ajouter une news</a></li>

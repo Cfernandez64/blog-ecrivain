@@ -25,6 +25,7 @@ abstract class NewsManager extends Manager
   {
     if ($news->isValid())
     {
+      //a metre dans controlleur
       $upload = new ImageUpload();
       $upload->upload();
       $news->isNew() ? $this->add($news) : $this->modify($news);
