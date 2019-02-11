@@ -18,7 +18,7 @@ foreach ($listeNews as $news)
       <?php
       if($news['image'])
       {
-        echo('<img class="w-100" src="http://projetblog/images/'.htmlspecialchars($news['image']).'"/>');
+        echo('<img class="w-100" src="http://myfencingteam.fr/images/'.htmlspecialchars($news['image']).'"/>');
       }
       ?>
       <p class="card-text text-left"><?= $news['contenu'] ?></p>

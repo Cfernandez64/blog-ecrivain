@@ -46,5 +46,5 @@ class HTTPRequest extends ApplicationComponent
   public function requestURI()
   {
     return $_SERVER['REQUEST_URI'];
-  }
+  } 
 }

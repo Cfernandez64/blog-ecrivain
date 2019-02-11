@@ -6,7 +6,7 @@
     <h2 class="text-center"><?= htmlspecialchars($news['titre']) ?></h2>
     <hr>
     <p class="text-muted text-center">Chapitre <em><?= htmlspecialchars($news['chapitre']) ?></em></p>
-    <p><img class="w-100" src="http://projetblog/images/<?php echo (htmlspecialchars($news['image']));?>"/></p>
+    <p><img class="w-100" src="http://myfencingteam.fr/images/<?php echo (htmlspecialchars($news['image']));?>"/></p>
 
     <p><?= nl2br($news['contenu']) ?></p>
 

@@ -17,7 +17,7 @@ class GeneralController extends BackController
 
     $this->app->user()->setFlash('La general a bien été supprimée !');
 
-    $this->app->httpResponse()->redirect('/admin/general');
+    $this->app->httpResponse()->redirect('/admin/dahsboard/general');
   }
 
   public function executeIndex(HTTPRequest $request)
@@ -81,7 +81,7 @@ class GeneralController extends BackController
     {
       $this->app->user()->setFlash($general->isNew() ? 'La page a bien été ajoutée !' : 'La page a bien été modifiée !');
 
-      $this->app->httpResponse()->redirect('/admin/general');
+      $this->app->httpResponse()->redirect('/admin/dashboard/general');
     }
 
     $this->page->addVar('form', $form->createView());

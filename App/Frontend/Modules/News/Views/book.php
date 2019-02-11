@@ -26,7 +26,7 @@
         <?php
         if($news['image'])
         {
-          echo('<p><img class="w-100" src="http://projetblog/images/'.htmlspecialchars($news['image']).'"/></p>');
+          echo('<p><img class="w-100" src="http://myfencingteam.fr/images/'.htmlspecialchars($news['image']).'"/></p>');
         }
         ?>
         <p><?= $news['contenu']; ?></p>

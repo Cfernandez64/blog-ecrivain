@@ -1,6 +1,6 @@
 <?php
 namespace Model;
-
+use \OCFram\Manager;
 use \Entity\Connexion;
 
 class ConnexionManagerPDO extends ConnexionManager
