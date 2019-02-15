@@ -106,41 +106,13 @@ class NewsController extends BackController
         $this->app->httpResponse()->redirect('news-'.$request->getData('id'));
     }
     $this->page->addVar('form', $form->createView());
-
   }
 
-  public function executeInsertComment(HTTPRequest $request)
+  public function executeSignal(HTTPRequest $request)
   {
-    // Si le formulaire a été envoyé.
-    if ($request->method() == 'POST')
-    {
-      $comment = new Comment([
-        'news' => $request->getData('news'),
-        'pseudo' => $request->postData('pseudo'),
-        'contenu' => $request->postData('contenu')
-      ]);
-    }
-    else
-    {
-      $comment = new Comment;
-    }
-
-    $formBuilder = new CommentFormBuilder($comment);
-    $formBuilder->build();
-
-    $form = $formBuilder->form();
-
-    $formHandler = new FormHandler($form, $this->managers->getManagerOf('Comments'), $request);
-
-    if ($formHandler->process())
-    {
-      $this->app->user()->setFlash('Le commentaire a bien été ajouté, merci !');
-
-      $this->app->httpResponse()->redirect('news-'.$request->getData('news'));
-    }
-
-    $this->page->addVar('comment', $comment);
-    $this->page->addVar('form', $form->createView());
-    $this->page->addVar('title', 'Ajout d\'un commentaire');
+    $newsId = $request->postData('idNews');
+    $comment = $request->getData('id');
+    $this->managers->getManagerOf('Comments')->signal($comment);
+    $this->app->httpResponse()->redirect('/news-'.$newsId);
   }
 }

@@ -8,6 +8,7 @@ class Comment extends Entity
   protected $news,
             $pseudo,
             $contenu,
+            $signalement,
             $date;
 
   const PSEUDO_INVALIDE = 1;
@@ -48,6 +49,11 @@ class Comment extends Entity
     $this->date = $date;
   }
 
+  public function setSignalement($signalement)
+  {
+    $this->signalement = $signalement;
+  }
+
   public function news()
   {
     return $this->news;
@@ -66,5 +72,10 @@ class Comment extends Entity
   public function date()
   {
     return $this->date;
+  }
+
+  public function signalement()
+  {
+    return $this->signalement;
   }
 }

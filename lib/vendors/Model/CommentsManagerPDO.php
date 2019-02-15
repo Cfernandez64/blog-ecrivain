@@ -28,6 +28,20 @@ class CommentsManagerPDO extends CommentsManager
     $this->dao->exec('DELETE FROM comments WHERE news = '.(int) $news);
   }
 
+  public function getList()
+  {
+    $sql = 'SELECT id, pseudo, news, contenu, date, signalement FROM comments ORDER BY signalement DESC, id DESC';
+
+    $requete = $this->dao->query($sql);
+    $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\Comment');
+
+    $listeComments = $requete->fetchAll();
+
+    $requete->closeCursor();
+
+    return $listeComments;
+  }
+
   public function getListOf($news)
   {
     if (!ctype_digit($news))
@@ -62,7 +76,21 @@ class CommentsManagerPDO extends CommentsManager
     $q->execute();
   }
 
-  public function get($id)
+  public function signal($id)
+  {
+    $q = $this->dao->prepare('UPDATE comments SET signalement = :signalement WHERE id = '.(int) $id);
+    $q->bindValue(':signalement', '1');
+    $q->execute();
+  }
+
+  public function deleteSignal($id)
+  {
+    $q = $this->dao->prepare('UPDATE comments SET signalement = :signalement WHERE id = '.(int) $id);
+    $q->bindValue(':signalement', '0');
+    $q->execute();
+  }
+
+  public function getUnique($id)
   {
     $q = $this->dao->prepare('SELECT id, news, pseudo, contenu FROM comments WHERE id = :id');
     $q->bindValue(':id', (int) $id, \PDO::PARAM_INT);

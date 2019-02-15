@@ -11,3 +11,5 @@ class PDOFactory
     return $db;
   }
 }
+
+//$db = new \PDO('mysql:host=myfencinpwclem.mysql.db;dbname=myfencinpwclem', 'myfencinpwclem', 'Hendaye64');

@@ -2,6 +2,7 @@
 <routes>
   <route url="/admin/" module="Connexion" action="index" />
   <route url="/admin/dashboard" module="News" action="index" />
+  <route url="/admin/dashboard/comments" module="News" action="indexComments" />
   <route url="/admin/dashboard/general" module="General" action="index" />
   <route url="/admin/dashboard/deconnexion" module="Deconnexion" action="deconnexion" />
   <route url="/admin/dashboard/news-insert" module="News" action="insert" />

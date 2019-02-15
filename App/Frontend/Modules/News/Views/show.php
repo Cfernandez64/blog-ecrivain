@@ -49,15 +49,23 @@
         foreach ($comments as $comment)
         {
           ?>
-
-          <p class="mb-1"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
-            <small class="text-muted"> - <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
-            <?php if ($user->isAuthenticated()) { ?> -
-              <a href="admin/dashboard/comment-update-<?= $comment['id'] ?>">Modifier</a> |
-              <a href="admin/dashboard/comment-delete-<?= $comment['id'] ?>">Supprimer</a>
-            <?php } ?>
-            <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
-
+          <div class="row align-items-center">
+            <div class="col-md-10">
+              <p class="mb-1"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
+                <small class="text-muted"> - <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
+                <?php if ($user->isAuthenticated()) { ?> -
+                  <a href="admin/dashboard/comment-update-<?= $comment['id'] ?>">Modifier</a> |
+                  <a href="admin/dashboard/comment-delete-<?= $comment['id'] ?>">Supprimer</a>
+                <?php } ?>
+                <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+            </div>
+            <div class="col-md-2">
+              <form class="" action="commentsignal-<?= $comment['id']?>" method="post">
+                <input type="hidden" id="idNews" name="idNews" value="<?= $news['id']?>">
+                <input type="submit" class="btn btn-outline-light" name="" value="Signaler">
+              </form>
+            </div>
+          </div>
             <?php
           }
           ?>

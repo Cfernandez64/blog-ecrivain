@@ -49,6 +49,7 @@ abstract class CommentsManager extends Manager
    * @param $news La news sur laquelle on veut récupérer les commentaires
    * @return array
    */
+   abstract public function getList();
   abstract public function getListOf($news);
 
   /**
@@ -59,9 +60,18 @@ abstract class CommentsManager extends Manager
   abstract protected function modify(Comment $comment);
 
   /**
+   * Méthode permettant de modifier un commentaire.
+   * @param $comment Le commentaire à modifier
+   * @return void
+   */
+  abstract public function signal($id);
+
+  abstract public function deleteSignal($id);
+
+  /**
    * Méthode permettant d'obtenir un commentaire spécifique.
    * @param $id L'identifiant du commentaire
    * @return Comment
    */
-  abstract public function get($id);
+  abstract public function getUnique($id);
 }
