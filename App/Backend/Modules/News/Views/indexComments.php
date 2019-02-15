@@ -1,4 +1,4 @@
-<h3>Liste des commentaires</h3>
+<h3 class="mt-5 mb-3">Liste des commentaires</h3>
 <em class="text-muted">Les commentaires signalés apparaissent en rouge.</em>
 <div class="mb-5 mt-3">
   <div class="row p-2 justify-content-between font-weight-bolder border-bottom">
@@ -39,7 +39,13 @@ foreach ($listeComments as $comment)
         <a href="comment-update-<?= $comment['id'] ?>">Modifier</a>
       </div>
       <div class="col-1">
-        <a href="comment-approve-<?= $comment['id'] ?>">Approuver</a>
+        <?php
+          if ($comment['signalement'] == 1)
+          { ?>
+            <a href="comment-approve-<?= $comment['id'] ?>">Approuver</a>
+          <?php } else {
+            echo('Approuvé');
+          } ?>
       </div>
       <div class="col-1">
         <a href="comment-delete-<?= $comment['id'] ?>">Supprimer</a>

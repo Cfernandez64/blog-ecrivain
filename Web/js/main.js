@@ -11,6 +11,7 @@
   });
 
 
+
 //Req AJAX pour signalement des commentaires.
 $(document).ready(function(){
   $('.signal').click(function(){
