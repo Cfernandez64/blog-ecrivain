@@ -32,8 +32,7 @@
                     <li><a class="nav-link" title="L'auteur" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/manager.png"/></div><div class="item col">&nbsp;L'auteur</div></div></a></li>
                     <?php if ($user->isAuthenticated()) { ?>
                       <li class="nav-item"><a class="nav-link" href="/admin/dashboard/">Admin</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/general">Liste des pages</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/general-insert">Ajouter une page</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/comments">Liste des commentaires</a></li>
                       <li class="nav-item"><a class="nav-link" href="/admin/dashboard/news-insert">Ajouter une news</a></li>
                       <li class="nav-item"><a class="nav-link" href="/admin/dashboard/deconnexion">Se déconnecter</a></li>
                     <?php } ?>

@@ -30,7 +30,14 @@ class NewsController extends BackController
 
     $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
 
-    $this->app->httpResponse()->redirect('/admin/dashboard');
+    $this->app->httpResponse()->redirect('/admin/dashboard/comments');
+  }
+
+  public function executeApproveComment(HTTPRequest $request)
+  {
+    $this->managers->getManagerOf('Comments')->approve($request->getData('id'));
+
+    $this->app->httpResponse()->redirect('/admin/dashboard/comments');
   }
 
   public function executeIndex(HTTPRequest $request)
@@ -75,7 +82,7 @@ class NewsController extends BackController
     }
     else
     {
-      $comment = $this->managers->getManagerOf('Comments')->get($request->getData('id'));
+      $comment = $this->managers->getManagerOf('Comments')->getUnique($request->getData('id'));
     }
 
     $formBuilder = new CommentFormBuilder($comment);

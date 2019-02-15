@@ -15,4 +15,5 @@
 
   <route url="/admin/dashboard/comment-update-([0-9]+)" module="News" action="updateComment" vars="id" />
   <route url="/admin/dashboard/comment-delete-([0-9]+)" module="News" action="deleteComment" vars="id" />
+  <route url="/admin/dashboard/comment-approve-([0-9]+)" module="News" action="approveComment" vars="id" />
 </routes>

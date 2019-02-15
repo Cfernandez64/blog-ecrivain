@@ -60,10 +60,7 @@
                 <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
             </div>
             <div class="col-md-2">
-              <form class="" action="commentsignal-<?= $comment['id']?>" method="post">
-                <input type="hidden" id="idNews" name="idNews" value="<?= $news['id']?>">
-                <input type="submit" class="btn btn-outline-light" name="" value="Signaler">
-              </form>
+              <p class="btn btn-outline-light signal" id="commentsignal-<?= $comment['id'] ?>">Signaler</p>
             </div>
           </div>
             <?php
@@ -82,4 +79,46 @@
 
   </div>
 
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Commentaire signalé !</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Nous avons bien pris en compte votre demande de signalement.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Erreur !</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Oups, il semble que nous ayons rencontré une erreur, veuillez réessayer.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
   </div>

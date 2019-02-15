@@ -110,9 +110,12 @@ class NewsController extends BackController
 
   public function executeSignal(HTTPRequest $request)
   {
-    $newsId = $request->postData('idNews');
     $comment = $request->getData('id');
     $this->managers->getManagerOf('Comments')->signal($comment);
-    $this->app->httpResponse()->redirect('/news-'.$newsId);
+  }
+
+  public function processAnswer()
+  {
+
   }
 }

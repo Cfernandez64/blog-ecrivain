@@ -83,7 +83,7 @@ class CommentsManagerPDO extends CommentsManager
     $q->execute();
   }
 
-  public function deleteSignal($id)
+  public function approve($id)
   {
     $q = $this->dao->prepare('UPDATE comments SET signalement = :signalement WHERE id = '.(int) $id);
     $q->bindValue(':signalement', '0');
