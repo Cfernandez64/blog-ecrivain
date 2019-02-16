@@ -24,7 +24,7 @@
 
 
 
-<div class="bg-dark mt-3 p-3 container-fluid">
+<div class="bg-dark mt-3 p-0 pt-2 pb-2 p-md-3 container-fluid">
   <div class="container">
       <div class="col-md-8 offset-md-2 mt-3 text-white">
         <?php
@@ -49,7 +49,7 @@
         foreach ($comments as $comment)
         {
           ?>
-          <div class="row align-items-center">
+          <div class="row align-items-center mt-2 mt-md-0">
             <div class="col-md-10">
               <p class="mb-1"><strong><?= htmlspecialchars($comment['pseudo']) ?></strong>
                 <small class="text-muted"> - <?= $comment['date']->format('d/m/Y à H\hi') ?></small></p>
@@ -57,7 +57,7 @@
                   <a href="admin/dashboard/comment-update-<?= $comment['id'] ?>">Modifier</a> |
                   <a href="admin/dashboard/comment-delete-<?= $comment['id'] ?>">Supprimer</a>
                 <?php } ?>
-                <p class="pb-3"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+                <p class="pb-md-3 pb-1"><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
             </div>
             <div class="col-md-2">
               <p class="btn btn-outline-light signal" id="commentsignal-<?= $comment['id'] ?>">Signaler</p>

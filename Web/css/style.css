@@ -25,7 +25,7 @@ h2, h3{
   position:relative;
   height:35vh;
   width:100%;
-  background: url('/images/grotte.jpg');
+  background: url('/images/grotte-1.jpg');
   background-size:cover;
   background-position: center center;
 }
@@ -55,6 +55,7 @@ h2, h3{
 #site-title-home h1{
   font-size:5rem;
 }
+
 .borderTitre{
   background: #fff;
   height:3px;
@@ -90,6 +91,12 @@ h2, h3{
 nav{
   right:0;
   top:30%;
+  z-index:999;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
 }
 
 nav ul li{
@@ -150,4 +157,69 @@ footer{
 
 .form-control{
   background:rgba(255,255,255,0.5);
+}
+
+
+@media (max-width:576px){
+  #homeHeader{
+    background-position: center center;
+  }
+  #pageHeader{
+    height:20vh;
+  }
+  #site-title-home h1{
+    font-size:1.5rem;
+  }
+  #site-title{
+    font-size:1.5rem;
+    top:15px;
+    color:#fff;
+  }
+  #sub-title{
+    top:50px;
+  }
+  h2{
+    font-size: 1.6rem;
+  }
+  h3{
+    font-size:1.3rem;
+  }
+
+  nav{
+    width:100%;
+    right:0;
+    left:0;
+    top:90%;
+    bottom:0%;
+    background: rgba(0,39,107,1);
+  }
+  nav ul{
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+    justify-content: space-around;
+  }
+
+  nav ul li{
+    background: rgba(0,39,107,0.8);
+    transition: all .3s;
+  }
+
+  nav ul li:hover{
+      background: rgba(0,39,107,1);
+  }
+
+  nav ul li a{
+    color:#fff;
+  }
+  .item{
+    display: none;
+  }
+
+  nav ul li img{
+    max-width:30px;
+  }
+  .no-mobile{
+    display: none;
+  }
 }

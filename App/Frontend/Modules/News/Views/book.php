@@ -1,7 +1,7 @@
 <div class="container">
 
 <h2 class="mt-5 text-center">Filtrer par chapitre</h2>
-<div class="text-center w-25 mx-auto mt-3 mb-4">
+<div class="text-center w-50 mx-auto mt-3 mb-4">
   <select id="filter" class="form-control">
     <option value="all">Choisir un chapitre</option>
     <option value="chapter-1">Chapitre 1</option>

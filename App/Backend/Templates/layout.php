@@ -5,6 +5,7 @@
             <?= isset($title) ? $title : 'Mon super site' ?>
           </title>
 
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
           <meta charset="utf-8" />
           <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
           <script>
@@ -27,13 +28,12 @@
               <h1 id="site-title" class="position-absolute text-center"><a class="text-white text-decoration-none" href="/">Billet simple pour l'Alaska</a></h1>
               <p id="sub-title" class="text-white position-absolute">Carnet d'aventures</p>
               <nav class="position-fixed">
-                  <ul class="nav flex-column">
+                  <ul class="nav">
                     <li><a class="nav-link" title="Accueil" href="/"><div class="row align-items-center"><div class="picto col"><img src="/images/house.png"/></div><div class="item col">&nbsp;Accueil</div></div></a></li>
-                    <li><a class="nav-link" title="L'auteur" href="/general-1"><div class="row align-items-center"><div class="picto col"><img src="/images/manager.png"/></div><div class="item col">&nbsp;L'auteur</div></div></a></li>
                     <?php if ($user->isAuthenticated()) { ?>
-                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/">Admin</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/comments">Commentaires</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/admin/dashboard/deconnexion">Déconnexion</a></li>
+                      <li><a class="nav-link" title="Episodes" href="/admin/dashboard"><div class="row align-items-center"><div class="picto col"><img src="/images/books.png"/></div><div class="item col">&nbsp;Episodes</div></div></a></li>
+                      <li><a class="nav-link" title="Commentaires" href="/admin/dashboard/comments"><div class="row align-items-center"><div class="picto col"><img src="/images/chat.png"/></div><div class="item col">&nbsp;Commentaires</div></div></a></li>
+                      <li><a class="nav-link" title="Déconnexion" href="/admin/dashboard/deconnexion"><div class="row align-items-center"><div class="picto col"><img src="/images/logout.png"/></div><div class="item col">&nbsp;Déconnexion</div></div></a></li>
                     <?php } ?>
                   </ul>
                 </nav>

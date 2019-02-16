@@ -7,9 +7,8 @@
 foreach ($listeNews as $news)
 {
 ?>
-<div class="col-md-8 offset-md-2">
-  <div class="p-3">
-    <img src=""/>
+<div class="col-md-8 offset-md-2 col-12 offset-0 p-0">
+  <div class="p-md-3 p-0">
     <div class="card-body text-center">
       <h2 class="card-title text-center"><a class="text-decoration-none" href="news-<?= $news['id'] ?>"><?= htmlspecialchars($news['titre']) ?></a></h2>
       <p class="text-muted text-center">Chapitre <?= htmlspecialchars($news['chapitre']) ?></p>
