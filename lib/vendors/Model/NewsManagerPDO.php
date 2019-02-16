@@ -73,11 +73,12 @@ class NewsManagerPDO extends NewsManager
 
   protected function modify(News $news)
   {
-    $requete = $this->dao->prepare('UPDATE news SET chapitre = :chapitre, titre = :titre, contenu = :contenu, dateModif = NOW() WHERE id = :id');
+    $requete = $this->dao->prepare('UPDATE news SET chapitre = :chapitre, titre = :titre, contenu = :contenu, image = :image, dateModif = NOW() WHERE id = :id');
 
     $requete->bindValue(':titre', $news->titre());
     $requete->bindValue(':chapitre', $news->chapitre());
     $requete->bindValue(':contenu', $news->contenu());
+    $requete->bindValue(':image', $news->image());
     $requete->bindValue(':id', $news->id(), \PDO::PARAM_INT);
 
     $requete->execute();

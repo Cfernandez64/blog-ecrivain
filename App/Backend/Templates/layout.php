@@ -10,6 +10,12 @@
           <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=1xkjf8jecnrgz9hyj95bb0xjyfqes4n5ixgcm9vwy3c2jenh'></script>
           <script>
           tinymce.init({
+            plugins: [
+              "advlist autolink lists link charmap print preview anchor",
+              "searchreplace visualblocks code fullscreen",
+              "insertdatetime table paste wordcount"
+            ],
+            invalid_elements: 'div',
             selector: '#myContent',
             toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
           });
