@@ -41,16 +41,20 @@ class NewsController extends BackController
 
   public function executeBook(HTTPRequest $request)
   {
-    $nombreNews = $this->app->config()->get('nombre_news');
+    $nombreEpis = $this->app->config()->get('nombre_book');
     $nombreCaracteres = $this->app->config()->get('nombre_caracteres');
 
     // On ajoute une définition pour le titre.
-    $this->page->addVar('title', 'Liste des '.$nombreNews.' dernières news');
+    $this->page->addVar('title', 'Liste des '.$nombreNews.' derniers épisodes');
 
     // On récupère le manager des news.
     $manager = $this->managers->getManagerOf('News');
+    $page = $request->getData('page');
+    $nombrePages = ceil(($manager->count()) / $nombreEpis);
 
-    $listeNews = $manager->getList(0, $nombreNews);
+    $debut = ($page-1) * $nombreEpis;
+
+    $listeNews = $manager->getList($debut, $nombreEpis);
 
     foreach ($listeNews as $news)
     {
@@ -63,8 +67,12 @@ class NewsController extends BackController
       }
     }
 
+
+
     // On ajoute la variable $listeNews à la vue.
     $this->page->addVar('listeNews', $listeNews);
+    $this->page->addVar('page', $page);
+    $this->page->addVar('nombrePages', $nombrePages);
   }
 
   public function executeShow(HTTPRequest $request)
@@ -112,10 +120,5 @@ class NewsController extends BackController
   {
     $comment = $request->getData('id');
     $this->managers->getManagerOf('Comments')->signal($comment);
-  }
-
-  public function processAnswer()
-  {
-
   }
 }

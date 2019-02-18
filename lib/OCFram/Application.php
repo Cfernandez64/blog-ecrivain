@@ -39,6 +39,7 @@ abstract class Application
         $vars = explode(',', $route->getAttribute('vars'));
       }
 
+  
       // On ajoute la route au routeur.
       $router->addRoute(new Route($route->getAttribute('url'), $route->getAttribute('module'), $route->getAttribute('action'), $vars));
     }

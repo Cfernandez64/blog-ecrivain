@@ -17,7 +17,7 @@
   </div>
 
   <div class="col-md-8 offset-md-2 mt-1 text-center mb-4">
-    <p class="back"><a class="text-muted  text-decoration-none" href="/livre"><img src="/images/open-book.png" alt="booking"> <small>Revenir aux articles</small></a></p>
+    <p class="back"><a class="text-muted  text-decoration-none" href="/livre/part-1"><img src="/images/open-book.png" alt="booking"> <small>Revenir aux articles</small></a></p>
   </div>
 </div>
 

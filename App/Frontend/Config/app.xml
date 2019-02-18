@@ -4,4 +4,5 @@
   <define var="nombre_caracteres" value="200" />
   <define var="nombre_golds" value="10" />
   <define var="nombre_general" value="5" />
+  <define var="nombre_book" value="2" />
 </definitions>

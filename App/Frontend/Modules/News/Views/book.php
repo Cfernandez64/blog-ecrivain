@@ -19,7 +19,7 @@
   <div class="col-md-4 newsSingle <?php echo('chapter-'.htmlspecialchars($news['chapitre']).'');?>">
     <div class="p-3">
       <div class="text-center">
-        <h2 class="text-center"><a class="text-decoration-none" href="news-<?= $news['id'] ?>"><?= htmlspecialchars($news['titre']) ?></a></h2>
+        <h2 class="text-center"><a class="text-decoration-none" href="/news-<?= $news['id'] ?>"><?= htmlspecialchars($news['titre']) ?></a></h2>
         <p class="text-muted text-center">Chapitre <?= htmlspecialchars($news['chapitre']) ?></p>
 
         <p class="text-muted text-center">Publié le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
@@ -37,4 +37,25 @@
   <?php
   }?>
 </div>
+<div class="text-center mb-4 mt-4">
+  <?php
+  $next = $page+1;
+  $prec = $page-1;
+
+  if ($prec > 0)
+  {
+    if ($page = $nombrePages)
+    { ?>
+      <a class="btn btn-secondary" href="<?php echo("http://myfencingteam.fr/livre/part-$prec");?>">Précédent</a>
+    <?php } else
+    { ?>
+      <a class="btn btn-secondary" href="<?php echo("http://myfencingteam.fr/livre/part-$prec");?>">Précédent</a>
+      <a class="btn btn-dark" href="<?php echo("http://myfencingteam.fr/livre/part-$next");?>">Suivant</a>
+    <?php }
+  } else { ?>
+    <a class="btn btn-dark" href="<?php echo("http://myfencingteam.fr/livre/part-$next");?>">Suivant</a>
+  <?php }?>
+
+</div>
+
 </div>
